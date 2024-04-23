@@ -16,8 +16,8 @@ import '../../features/login/data/datasource/login_remote_datasource.dart'
 import '../../features/login/data/repositories/login_repository_imp.dart'
     as _i6;
 import '../../features/login/domain/repository/login_repository.dart' as _i5;
-import '../../features/login/domain/usecase/login.dart' as _i13;
-import '../../features/login/presentation/bloc/login_bloc.dart' as _i14;
+import '../../features/login/domain/usecase/login.dart' as _i14;
+import '../../features/login/presentation/bloc/login_bloc.dart' as _i15;
 import '../../features/stadium_seats/data/datasource/stadium_seat_remote_datasource.dart'
     as _i7;
 import '../../features/stadium_seats/data/repository/stadium_seat_repository_imp.dart'
@@ -26,11 +26,13 @@ import '../../features/stadium_seats/domain/repository/stadium_repository.dart'
     as _i8;
 import '../../features/stadium_seats/domain/usecase/get_map_detail.dart'
     as _i10;
-import '../../features/stadium_seats/domain/usecase/get_maps_list.dart' as _i11;
+import '../../features/stadium_seats/domain/usecase/get_maps_list.dart' as _i12;
+import '../../features/stadium_seats/presentation/bloc/get_maps_detail/get_map_detail_bloc.dart'
+    as _i11;
 import '../../features/stadium_seats/presentation/bloc/get_maps_list/get_maps_list_bloc.dart'
-    as _i12;
+    as _i13;
 import '../data/fake_data.dart' as _i3;
-import 'register_module.dart' as _i15;
+import 'register_module.dart' as _i16;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -56,14 +58,16 @@ extension GetItInjectableX on _i1.GetIt {
             loginRemoteDataSource: gh<_i7.StadiumSeatRemoteDataSource>()));
     gh.lazySingleton<_i10.GetMapDetail>(
         () => _i10.GetMapDetail(gh<_i8.StadiumSeatRepository>()));
-    gh.lazySingleton<_i11.GetMapsList>(
-        () => _i11.GetMapsList(gh<_i8.StadiumSeatRepository>()));
-    gh.factory<_i12.GetMapsListBloc>(
-        () => _i12.GetMapsListBloc(gh<_i11.GetMapsList>()));
-    gh.lazySingleton<_i13.Login>(() => _i13.Login(gh<_i5.LoginRepository>()));
-    gh.factory<_i14.LoginBloc>(() => _i14.LoginBloc(gh<_i13.Login>()));
+    gh.factory<_i11.GetMapDetailBloc>(
+        () => _i11.GetMapDetailBloc(gh<_i10.GetMapDetail>()));
+    gh.lazySingleton<_i12.GetMapsList>(
+        () => _i12.GetMapsList(gh<_i8.StadiumSeatRepository>()));
+    gh.factory<_i13.GetMapsListBloc>(
+        () => _i13.GetMapsListBloc(gh<_i12.GetMapsList>()));
+    gh.lazySingleton<_i14.Login>(() => _i14.Login(gh<_i5.LoginRepository>()));
+    gh.factory<_i15.LoginBloc>(() => _i15.LoginBloc(gh<_i14.Login>()));
     return this;
   }
 }
 
-class _$RegisterModule extends _i15.RegisterModule {}
+class _$RegisterModule extends _i16.RegisterModule {}
