@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'core/bloc/app_bloc_provider.dart';
 import 'core/injection/injection.dart';
 import 'features/login/presentation/screens/login_screen.dart';
+import 'features/stadium_seats/presentation/screens/stadium_seats_screen.dart';
 
 void main() async {
   configureDependencies();
@@ -34,6 +35,10 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: "/",
       builder: (context, state) => const LoginScreen(),
+    ),
+    GoRoute(
+      path: "/stadium_seat_screen",
+      builder: (context, state) => const StadiumSeatsScreen(),
     )
   ],
 );
