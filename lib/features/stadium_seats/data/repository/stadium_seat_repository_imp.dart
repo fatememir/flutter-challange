@@ -30,8 +30,16 @@ class StadiumSeatRepositoryImpl implements StadiumSeatRepository {
   }
 
   @override
-  Future<Either<Failure, MapsDetailEntity>> getMapDetail(String mapId) {
-    // TODO: implement getMapDetail
-    throw UnimplementedError();
+  Future<Either<Failure, MapsDetailEntity>> getMapDetail(String mapId) async {
+    try {
+      var result = await loginRemoteDataSource.getMapDetail(mapId);
+      if (result.matrices.isNotEmpty) {
+        return Right(result);
+      } else {
+        return const Left(ServerFailure("The list is empty"));
+      }
+    } on ServerException {
+      return const Left(ServerFailure("Server Error"));
+    }
   }
 }
