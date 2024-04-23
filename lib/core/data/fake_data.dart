@@ -2,6 +2,7 @@ import '../../features/login/data/model/login_data_model.dart';
 import '../../features/login/domain/model/login_body_model.dart';
 import '../../features/stadium_seats/data/model/map_list/maps_list_data_model.dart';
 import '../../features/stadium_seats/data/model/maps_detail/map_detail_data_model.dart';
+import '../../features/stadium_seats/domain/model/buy_ticket_model.dart';
 
 class FakeData {
   Future<LoginDataModel> loginRequest(LoginBodyModel loginBodyModel) async {
@@ -60,5 +61,11 @@ class FakeData {
     await Future.delayed(const Duration(milliseconds: 1000));
 
     return MapDetailDataModel(id: matrix.id, matrices: matrix.matrices);
+  }
+
+  Future<bool> buyTicket(BuyTicketModel buyTicketModel) async {
+    await Future.delayed(const Duration(milliseconds: 1000));
+
+    return true;
   }
 }
