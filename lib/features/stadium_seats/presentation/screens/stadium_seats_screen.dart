@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../domain/model/buy_ticket_model.dart';
 import '../bloc/get_maps_detail/get_map_detail_bloc.dart';
 import '../bloc/get_maps_list/get_maps_list_bloc.dart';
 import '../widgets/seat_widget.dart';
@@ -91,6 +92,15 @@ class _StadiumSeatsScreenState extends State<StadiumSeatsScreen> {
 
             return SeatWidget(
               onClick: () {
+                context
+                    .read<GetMapDetailBloc>()
+                    .add(GetMapDetailEvent.buyTicket(
+                    BuyTicketModel(
+                      x: x,
+                      y: rowIndex,
+                    ),
+                    context
+                ));
               },
               status: status,
             );

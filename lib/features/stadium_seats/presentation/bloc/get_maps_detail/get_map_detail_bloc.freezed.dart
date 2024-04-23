@@ -16,42 +16,47 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$GetMapDetailEvent {
-  List<String> get maps => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<String> maps) getMapDetail,
+    required TResult Function(
+            BuyTicketModel buyTicketModel, BuildContext context)
+        buyTicket,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<String> maps)? getMapDetail,
+    TResult? Function(BuyTicketModel buyTicketModel, BuildContext context)?
+        buyTicket,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<String> maps)? getMapDetail,
+    TResult Function(BuyTicketModel buyTicketModel, BuildContext context)?
+        buyTicket,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetMapDetail value) getMapDetail,
+    required TResult Function(_BuyTicket value) buyTicket,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetMapDetail value)? getMapDetail,
+    TResult? Function(_BuyTicket value)? buyTicket,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetMapDetail value)? getMapDetail,
+    TResult Function(_BuyTicket value)? buyTicket,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $GetMapDetailEventCopyWith<GetMapDetailEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -60,8 +65,6 @@ abstract class $GetMapDetailEventCopyWith<$Res> {
   factory $GetMapDetailEventCopyWith(
           GetMapDetailEvent value, $Res Function(GetMapDetailEvent) then) =
       _$GetMapDetailEventCopyWithImpl<$Res, GetMapDetailEvent>;
-  @useResult
-  $Res call({List<String> maps});
 }
 
 /// @nodoc
@@ -73,28 +76,13 @@ class _$GetMapDetailEventCopyWithImpl<$Res, $Val extends GetMapDetailEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? maps = null,
-  }) {
-    return _then(_value.copyWith(
-      maps: null == maps
-          ? _value.maps
-          : maps // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$GetMapDetailImplCopyWith<$Res>
-    implements $GetMapDetailEventCopyWith<$Res> {
+abstract class _$$GetMapDetailImplCopyWith<$Res> {
   factory _$$GetMapDetailImplCopyWith(
           _$GetMapDetailImpl value, $Res Function(_$GetMapDetailImpl) then) =
       __$$GetMapDetailImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({List<String> maps});
 }
@@ -161,6 +149,9 @@ class _$GetMapDetailImpl implements _GetMapDetail {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<String> maps) getMapDetail,
+    required TResult Function(
+            BuyTicketModel buyTicketModel, BuildContext context)
+        buyTicket,
   }) {
     return getMapDetail(maps);
   }
@@ -169,6 +160,8 @@ class _$GetMapDetailImpl implements _GetMapDetail {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<String> maps)? getMapDetail,
+    TResult? Function(BuyTicketModel buyTicketModel, BuildContext context)?
+        buyTicket,
   }) {
     return getMapDetail?.call(maps);
   }
@@ -177,6 +170,8 @@ class _$GetMapDetailImpl implements _GetMapDetail {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<String> maps)? getMapDetail,
+    TResult Function(BuyTicketModel buyTicketModel, BuildContext context)?
+        buyTicket,
     required TResult orElse(),
   }) {
     if (getMapDetail != null) {
@@ -189,6 +184,7 @@ class _$GetMapDetailImpl implements _GetMapDetail {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetMapDetail value) getMapDetail,
+    required TResult Function(_BuyTicket value) buyTicket,
   }) {
     return getMapDetail(this);
   }
@@ -197,6 +193,7 @@ class _$GetMapDetailImpl implements _GetMapDetail {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetMapDetail value)? getMapDetail,
+    TResult? Function(_BuyTicket value)? buyTicket,
   }) {
     return getMapDetail?.call(this);
   }
@@ -205,6 +202,7 @@ class _$GetMapDetailImpl implements _GetMapDetail {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetMapDetail value)? getMapDetail,
+    TResult Function(_BuyTicket value)? buyTicket,
     required TResult orElse(),
   }) {
     if (getMapDetail != null) {
@@ -217,11 +215,158 @@ class _$GetMapDetailImpl implements _GetMapDetail {
 abstract class _GetMapDetail implements GetMapDetailEvent {
   const factory _GetMapDetail(final List<String> maps) = _$GetMapDetailImpl;
 
-  @override
   List<String> get maps;
-  @override
   @JsonKey(ignore: true)
   _$$GetMapDetailImplCopyWith<_$GetMapDetailImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$BuyTicketImplCopyWith<$Res> {
+  factory _$$BuyTicketImplCopyWith(
+          _$BuyTicketImpl value, $Res Function(_$BuyTicketImpl) then) =
+      __$$BuyTicketImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({BuyTicketModel buyTicketModel, BuildContext context});
+}
+
+/// @nodoc
+class __$$BuyTicketImplCopyWithImpl<$Res>
+    extends _$GetMapDetailEventCopyWithImpl<$Res, _$BuyTicketImpl>
+    implements _$$BuyTicketImplCopyWith<$Res> {
+  __$$BuyTicketImplCopyWithImpl(
+      _$BuyTicketImpl _value, $Res Function(_$BuyTicketImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? buyTicketModel = null,
+    Object? context = null,
+  }) {
+    return _then(_$BuyTicketImpl(
+      null == buyTicketModel
+          ? _value.buyTicketModel
+          : buyTicketModel // ignore: cast_nullable_to_non_nullable
+              as BuyTicketModel,
+      null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$BuyTicketImpl implements _BuyTicket {
+  const _$BuyTicketImpl(this.buyTicketModel, this.context);
+
+  @override
+  final BuyTicketModel buyTicketModel;
+  @override
+  final BuildContext context;
+
+  @override
+  String toString() {
+    return 'GetMapDetailEvent.buyTicket(buyTicketModel: $buyTicketModel, context: $context)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BuyTicketImpl &&
+            (identical(other.buyTicketModel, buyTicketModel) ||
+                other.buyTicketModel == buyTicketModel) &&
+            (identical(other.context, context) || other.context == context));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, buyTicketModel, context);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BuyTicketImplCopyWith<_$BuyTicketImpl> get copyWith =>
+      __$$BuyTicketImplCopyWithImpl<_$BuyTicketImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<String> maps) getMapDetail,
+    required TResult Function(
+            BuyTicketModel buyTicketModel, BuildContext context)
+        buyTicket,
+  }) {
+    return buyTicket(buyTicketModel, context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<String> maps)? getMapDetail,
+    TResult? Function(BuyTicketModel buyTicketModel, BuildContext context)?
+        buyTicket,
+  }) {
+    return buyTicket?.call(buyTicketModel, context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<String> maps)? getMapDetail,
+    TResult Function(BuyTicketModel buyTicketModel, BuildContext context)?
+        buyTicket,
+    required TResult orElse(),
+  }) {
+    if (buyTicket != null) {
+      return buyTicket(buyTicketModel, context);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetMapDetail value) getMapDetail,
+    required TResult Function(_BuyTicket value) buyTicket,
+  }) {
+    return buyTicket(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetMapDetail value)? getMapDetail,
+    TResult? Function(_BuyTicket value)? buyTicket,
+  }) {
+    return buyTicket?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetMapDetail value)? getMapDetail,
+    TResult Function(_BuyTicket value)? buyTicket,
+    required TResult orElse(),
+  }) {
+    if (buyTicket != null) {
+      return buyTicket(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _BuyTicket implements GetMapDetailEvent {
+  const factory _BuyTicket(
+          final BuyTicketModel buyTicketModel, final BuildContext context) =
+      _$BuyTicketImpl;
+
+  BuyTicketModel get buyTicketModel;
+  BuildContext get context;
+  @JsonKey(ignore: true)
+  _$$BuyTicketImplCopyWith<_$BuyTicketImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -561,10 +706,10 @@ class __$$MapDetailFetchedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mapsDetailEntity = freezed,
+    Object? mapsDetailEntity = null,
   }) {
     return _then(_$MapDetailFetchedImpl(
-      freezed == mapsDetailEntity
+      null == mapsDetailEntity
           ? _value.mapsDetailEntity
           : mapsDetailEntity // ignore: cast_nullable_to_non_nullable
               as MapsDetailEntity,
@@ -590,13 +735,12 @@ class _$MapDetailFetchedImpl implements _MapDetailFetched {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MapDetailFetchedImpl &&
-            const DeepCollectionEquality()
-                .equals(other.mapsDetailEntity, mapsDetailEntity));
+            (identical(other.mapsDetailEntity, mapsDetailEntity) ||
+                other.mapsDetailEntity == mapsDetailEntity));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(mapsDetailEntity));
+  int get hashCode => Object.hash(runtimeType, mapsDetailEntity);
 
   @JsonKey(ignore: true)
   @override
