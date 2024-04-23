@@ -11,11 +11,13 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../../login/data/datasource/login_remote_datasource.dart' as _i4;
-import '../../login/data/repositories/login_repository_imp.dart' as _i6;
-import '../../login/domain/repository/login_repository.dart' as _i5;
-import '../../login/domain/usecase/login.dart' as _i7;
-import '../../login/presentation/bloc/login_bloc.dart' as _i8;
+import '../../features/login/data/datasource/login_remote_datasource.dart'
+    as _i4;
+import '../../features/login/data/repositories/login_repository_imp.dart'
+    as _i6;
+import '../../features/login/domain/repository/login_repository.dart' as _i5;
+import '../../features/login/domain/usecase/login.dart' as _i7;
+import '../../features/login/presentation/bloc/login_bloc.dart' as _i8;
 import '../data/fake_data.dart' as _i3;
 import 'register_module.dart' as _i9;
 

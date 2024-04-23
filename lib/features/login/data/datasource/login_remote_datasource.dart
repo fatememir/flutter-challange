@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 
-import '../../../core/data/fake_data.dart';
+import '../../../../core/data/fake_data.dart';
 import '../../domain/model/login_body_model.dart';
 import '../model/login_data_model.dart';
 

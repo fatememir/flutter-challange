@@ -1,5 +1,5 @@
-import '../../login/data/model/login_data_model.dart';
-import '../../login/domain/model/login_body_model.dart';
+import '../../features/login/data/model/login_data_model.dart';
+import '../../features/login/domain/model/login_body_model.dart';
 
 class FakeData {
   Future<LoginDataModel> loginRequest(LoginBodyModel loginBodyModel) async {
