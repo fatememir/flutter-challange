@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter_challange_arman/features/stadium_seats/domain/entity/maps_detail.dart';
 import 'package:injectable/injectable.dart';
 import '../../../../core/error/exception.dart';
 import '../../../../core/error/exception/failure.dart';
@@ -26,5 +27,11 @@ class StadiumSeatRepositoryImpl implements StadiumSeatRepository {
     } on ServerException {
       return const Left(ServerFailure("Server Error"));
     }
+  }
+
+  @override
+  Future<Either<Failure, MapsDetailEntity>> getMapDetail(String mapId) {
+    // TODO: implement getMapDetail
+    throw UnimplementedError();
   }
 }
