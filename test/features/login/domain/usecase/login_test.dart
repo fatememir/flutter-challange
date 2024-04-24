@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_challange_arman/features/login/domain/entity/auth_entity.dart';
 import 'package:flutter_challange_arman/features/login/domain/model/login_body_model.dart';
-import 'package:flutter_challange_arman/features/login/domain/repository/login_repository.dart';
 import 'package:flutter_challange_arman/features/login/domain/usecase/login.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
@@ -25,7 +24,7 @@ void main() {
   var loginBody = LoginBodyModel(userName: "1111", password: '1111');
 
   test(
-      'should get intro questions',
+      'should login successfully',
           () async {
         // arrange
         when(
