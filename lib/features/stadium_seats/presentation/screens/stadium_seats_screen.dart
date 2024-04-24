@@ -7,6 +7,7 @@ import '../bloc/get_maps_detail/get_map_detail_bloc.dart';
 import '../bloc/get_maps_list/get_maps_list_bloc.dart';
 import '../widgets/seat_widget.dart';
 
+///  Represents the screen for stadium seats.
 class StadiumSeatsScreen extends StatefulWidget {
   const StadiumSeatsScreen({Key? key}) : super(key: key);
 
@@ -27,6 +28,7 @@ class _StadiumSeatsScreenState extends State<StadiumSeatsScreen> {
       listener: (context, state) async {
         state.maybeWhen(
           mapsFetched: (value) {
+            /// Get map detail after receiving the maps
             getMapDetail(value.mapsList);
           },
           error: (message) {},
@@ -37,6 +39,7 @@ class _StadiumSeatsScreenState extends State<StadiumSeatsScreen> {
         listener: (context, state) {
           state.maybeWhen(
             mapDetailFetched: (v) {
+              /// removing loading dialog
               context.pop();
             },
             orElse: () {},
@@ -74,6 +77,7 @@ class _StadiumSeatsScreenState extends State<StadiumSeatsScreen> {
   }
 
   void getMapDetail(List<String> maps) {
+    /// call mapDetail event
     context.read<GetMapDetailBloc>().add(GetMapDetailEvent.getMapDetail(maps));
   }
 
@@ -91,6 +95,7 @@ class _StadiumSeatsScreenState extends State<StadiumSeatsScreen> {
 
               return SeatWidget(
                 onClick: () {
+                  //call buy ticket event and send coordinates as body
                   context.read<GetMapDetailBloc>().add(
                     GetMapDetailEvent.buyTicket(
                       BuyTicketModel(

@@ -1,13 +1,13 @@
+/// AuthEntity: Represents the authentication entity.
+class AuthEntity {
+  /// status: Represents the status of the authentication.
+  final bool status;
 
-
-
-class AuthEntity{
-  final bool status ;
+  /// token: Represents the authentication token.
   final String? token;
 
   AuthEntity({
-    required this.token ,required this.status,
+    required this.token,
+    required this.status,
   });
 }
-
-

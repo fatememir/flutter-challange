@@ -2,6 +2,9 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 
+
+/// A dialog widget displaying a loading indicator.
+
 class ShowDialog extends StatelessWidget {
   const ShowDialog({super.key});
 
@@ -12,11 +15,11 @@ class ShowDialog extends StatelessWidget {
       elevation: 0,
       child: Center(
         child: Container(
-          padding: EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20.0),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10.0),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 color: Colors.black12,
                 blurRadius: 10.0,
@@ -28,7 +31,7 @@ class ShowDialog extends StatelessWidget {
               ),
             ],
           ),
-          child: Column(
+          child: const Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               CircularProgressIndicator(),

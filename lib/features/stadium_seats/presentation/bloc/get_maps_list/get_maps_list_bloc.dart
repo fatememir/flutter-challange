@@ -24,6 +24,7 @@ class GetMapsListBloc extends Bloc<GetMapsListEvent, GetMapsListState> {
     on<_GetMapsList>(_onGetMapsList);
   }
 
+  ///  Handles the GetMapsListEvent.
   Future<void> _onGetMapsList(
     _GetMapsList event,
     Emitter<GetMapsListState> emit,

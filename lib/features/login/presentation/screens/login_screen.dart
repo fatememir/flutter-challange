@@ -24,9 +24,11 @@ class _LoginScreenState extends State<LoginScreen> {
         state.maybeWhen(
           initial: () {},
           success: () {
+            /// Go to stadium_seat_screen after authentication
             context.go("/stadium_seat_screen");
           },
           error: (message) {
+            /// Remove the previous entered value and go to initial Value state
             setState(() {
               _usernameController.clear();
               _passwordController.clear();
@@ -76,6 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               obscureText: true,
               validator: (value) {
+                /// Check that textfield is not empty
                 if (value!.isEmpty) {
                   return 'Please enter your password';
                 }
@@ -99,7 +102,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: const Text('Login'),
                 );
               });
-            })
+            }),
+            const SizedBox(
+              height: 50,
+            ),
+            const Text(
+              "The corrected userName and password is 1111 ",
+              textAlign: TextAlign.center,
+            )
           ],
         ),
       ),
@@ -107,6 +117,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   _loginButtonPressed() {
+    /// Call login event
+
     if (_formKey.currentState!.validate()) {
       context.read<LoginBloc>().add(LoginEvent.login(LoginBodyModel(
           userName: _usernameController.text,

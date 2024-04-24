@@ -5,8 +5,8 @@ abstract class Failure extends Equatable {
   List<Object> get props => [];
 }
 
-//General Failures
+///General Failures
 class ServerFailure extends Failure {}
 
-//the errors that happen in cached data
+///The errors that happen in cached data
 class CacheFailure extends Failure {}

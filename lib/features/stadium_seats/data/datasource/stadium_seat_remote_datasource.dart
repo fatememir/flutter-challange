@@ -5,6 +5,8 @@ import '../../domain/model/buy_ticket_model.dart';
 import '../model/map_list/maps_list_data_model.dart';
 import '../model/maps_detail/map_detail_data_model.dart';
 
+///  Abstract class representing a remote data source for StadiumSeat.
+
 abstract class StadiumSeatRemoteDataSource {
   Future<MapsListDataModel> getMapsList();
 

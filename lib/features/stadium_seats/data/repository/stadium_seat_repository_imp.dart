@@ -8,6 +8,7 @@ import '../../domain/repository/stadium_repository.dart';
 import '../datasource/stadium_seat_remote_datasource.dart';
 import '../model/map_list/maps_list_data_model.dart';
 
+///  Implementation of [StadiumSeatRepository].
 @LazySingleton(as: StadiumSeatRepository)
 class StadiumSeatRepositoryImpl implements StadiumSeatRepository {
   final StadiumSeatRemoteDataSource loginRemoteDataSource;
@@ -15,6 +16,9 @@ class StadiumSeatRepositoryImpl implements StadiumSeatRepository {
   StadiumSeatRepositoryImpl({
     required this.loginRemoteDataSource,
   });
+
+  ///  Performs a getMapsList request.
+  /// Returns a [MapsListDataModel] representing the login response.
 
   @override
   Future<Either<Failure, MapsListDataModel>> getMapsList() async {
@@ -30,6 +34,9 @@ class StadiumSeatRepositoryImpl implements StadiumSeatRepository {
     }
   }
 
+  ///  Performs a getMapDetail request.
+  ///   Takes a String as input.
+  /// Returns a [MapsDetailEntity] representing the login response.
   @override
   Future<Either<Failure, MapsDetailEntity>> getMapDetail(String mapId) async {
     try {
@@ -43,6 +50,10 @@ class StadiumSeatRepositoryImpl implements StadiumSeatRepository {
       return const Left(ServerFailure("Server Error"));
     }
   }
+
+  ///  Performs a buyTicket request.
+  ///   Takes a [BuyTicketModel] as input.
+  /// Returns a bool representing the login response.
   @override
   Future<Either<Failure, bool>> buyTicket(BuyTicketModel buyTicketModel) async {
     try {

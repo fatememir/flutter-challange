@@ -12,6 +12,7 @@ part 'login_state.dart';
 
 part 'login_bloc.freezed.dart';
 
+/// LoginBloc: Manages the state of the login process.
 @injectable
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final Login loginUsecase;
@@ -21,6 +22,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     on<_backToInitial>(_onBackToInitial);
   }
 
+  /// _onLogin: Handles the login event.
   Future<void> _onLogin(
     _login event,
     Emitter<LoginState> emit,
@@ -37,6 +39,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     }
   }
 
+  /// _onBackToInitial: Handles the back to initial event.
   Future<void> _onBackToInitial(
     _backToInitial event,
     Emitter<LoginState> emit,

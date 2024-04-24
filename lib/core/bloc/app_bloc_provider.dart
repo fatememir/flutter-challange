@@ -6,7 +6,9 @@ import '../../features/stadium_seats/presentation/bloc/get_maps_list/get_maps_li
 import '../../features/stadium_seats/presentation/screens/stadium_seats_screen.dart';
 import '../injection/injection.dart';
 
+/// AppBlocProviders: Provides all necessary Blocs for the app.
 class AppBlocProviders {
+  /// getProviders: Returns a list of BlocProviders.
   static Future<List<BlocProvider>> getProviders() async {
     return [
       BlocProvider<LoginBloc>(
