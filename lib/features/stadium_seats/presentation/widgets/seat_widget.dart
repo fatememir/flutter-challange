@@ -15,15 +15,10 @@ class SeatWidget extends StatelessWidget {
           onClick();
         }
       },
-      child: Container(
-        margin: const EdgeInsets.all(2),
-        width: 50,
-        height: 50,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: status==0 ? Colors.greenAccent : Colors.red,
-        ),
-      ),
+      child: Container( margin: const EdgeInsets.all(2),
+        child: Image.asset("asset/couch_seat_sofa_icon.png",color: status==0 ? Colors.greenAccent :  Colors.red,
+        width: 50,height: 50,),
+      )
     );
   }
 }

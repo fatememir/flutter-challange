@@ -10,23 +10,40 @@ class ShowDialog extends StatelessWidget {
     return Dialog(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      child: Stack(
-        children: <Widget>[
-          // Blurred Background
-          BackdropFilter(
-            filter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width / 2,
-              height: MediaQuery.of(context).size.height / 5,
-              child: const Center(
-                child: CircularProgressIndicator(),
+      child: Center(
+        child: Container(
+          padding: EdgeInsets.all(20.0),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10.0),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black12,
+                blurRadius: 10.0,
+                spreadRadius: 4.0,
+                offset: Offset(
+                  0.0,
+                  8.0,
+                ),
               ),
-            ),
+            ],
           ),
-          // Content
-        ],
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CircularProgressIndicator(),
+              SizedBox(height: 20.0),
+              Text(
+                'Loading...',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
-    ;
   }
 }
